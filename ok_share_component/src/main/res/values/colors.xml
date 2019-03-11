@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ok_share_color_cancel_bg">#eeeef0</color>
+    <color name="ok_share_color_cancel_text">#b7b6be</color>
+    <color name="ok_share_color_sub_title_text">#b7b6be</color>
+    <color name="ok_share_color_title_text">#f9609c</color>
+    <color name="ok_share_color_item_text">#999999</color>
+    <color name="ok_share_color_line">#e8e8e8</color>
+</resources>

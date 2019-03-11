@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <style name="ok_share_bottom_dialog" parent="Theme.AppCompat.Light.Dialog">
+        <!-- // 覆盖windowBackground 否则距离两边会有空余不能撑满屏幕宽度 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/ok_share_bottom_dialog_animation</item>
+    </style>
+
+    <style name="ok_share_bottom_dialog_animation">
+        <item name="android:windowEnterAnimation">@anim/ok_share_bottom_sheet_slide_in</item>
+        <item name="android:windowExitAnimation">@anim/ok_share_bottom_sheet_slide_out</item>
+    </style>
+
+</resources>

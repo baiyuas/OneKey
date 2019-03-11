@@ -1,0 +1,18 @@
+<resources>
+    <string name="ok_share_item_text_sina">新浪</string>
+    <string name="ok_share_item_text_wechat">微信</string>
+    <string name="ok_share_item_text_moments">朋友圈</string>
+    <string name="ok_share_item_text_alipay">支付宝</string>
+    <string name="ok_share_item_text_qq">QQ</string>
+    <string name="ok_share_item_text_zone">QQ空间</string>
+    <string name="ok_share_item_text_copy">复制链接</string>
+    <string name="ok_share_item_text_more">更多</string>
+    <string name="ok_share_cancel">取消</string>
+    <string name="ok_share_share_to">分享到</string>
+
+    <string name="ok_share_error_code_success">发送成功</string>
+    <string name="ok_share_error_code_cancel">发送取消</string>
+    <string name="ok_share_error_code_deny">发送被拒绝</string>
+    <string name="ok_share_error_code_unsupported">不支持错误</string>
+    <string name="ok_share_error_code_unknown">发送返回</string>
+</resources>
