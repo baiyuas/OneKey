@@ -62,10 +62,10 @@ public class QqShare extends BaseShare {
 
     @Override
     public void share(OkShareMessage message) {
-        if (!tencent.isQQInstalled(context)) {
-            OKShareUtil.toast(context, "检测到您未安装QQ");
-            return;
-        }
+//        if (!tencent.isQQInstalled(context)) {
+//            OKShareUtil.toast(context, "检测到您未安装QQ");
+//            return;
+//        }
         String filePath = Environment.getExternalStorageDirectory() + "/Android/temp.png";
         if (isAssetsFile(message.getImageUrl())) {
             try {

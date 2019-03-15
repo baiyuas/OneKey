@@ -1,9 +1,9 @@
 package com.baiyu.onekey;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 
 import com.baiyu.share.OkShareMessage;
 import com.baiyu.share.OkShareOption;
@@ -29,13 +29,15 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_share).setOnClickListener(v -> {
             OneKeyShare.get()
                     .setMessage(message)
-                    .addOption(new OkShareOption(R.drawable.ic_launcher, "支付宝", 2, OkShareOption.SHARE_TYPE_ALIPAY))
-                    .addOption(new OkShareOption(R.drawable.ic_launcher, "微信", 1, OkShareOption.SHARE_TYPE_WECHAT))
-                    .addOption(new OkShareOption(R.drawable.ic_launcher, "QQ", 1, OkShareOption.SHARE_TYPE_QQ))
+                    .addOption(new OkShareOption(R.drawable.ic_share_alipay, "支付宝", 1, OkShareOption.SHARE_TYPE_ALIPAY))
+                    .addOption(new OkShareOption(R.drawable.ic_share_wechat, "微信", 2, OkShareOption.SHARE_TYPE_WECHAT))
+                    .addOption(new OkShareOption(R.drawable.ic_share_moments, "朋友圈", 3, OkShareOption.SHARE_TYPE_WECHAT_MOMENTS))
+                    .addOption(new OkShareOption(R.drawable.ic_share_zone, "QQ空间", 5, OkShareOption.SHARE_TYPE_QQ_ZONE))
+                    .addOption(new OkShareOption(R.drawable.ic_share_qq, "QQ", 4, OkShareOption.SHARE_TYPE_QQ))
+                    .addOption(new OkShareOption(R.drawable.ic_share_sina, "新浪", 6, OkShareOption.SHARE_TYPE_SINA))
+                    .addOption(new OkShareOption(R.drawable.ic_share_ding, "钉钉", 7, OkShareOption.SHARE_TYPE_QQ))
                     .show(this);
         });
-
-
     }
 
     @Override

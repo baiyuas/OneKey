@@ -22,6 +22,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
+import jp.wasabeef.recyclerview.animators.SlideInUpAnimator;
+
+
 /**
  * @author lpc
  * <p>
@@ -49,7 +52,7 @@ public final class OkShareFragment extends DialogFragment implements OkOnItemCli
         activity = getActivity();
         getArgShareMessage();
         getArgShareOptions();
-//        setStyle(STYLE_NO_TITLE, R.style.ok_share_bottom_dialog);
+        setStyle(STYLE_NO_TITLE, R.style.ok_share_bottom_dialog);
     }
 
     @Override
@@ -61,7 +64,6 @@ public final class OkShareFragment extends DialogFragment implements OkOnItemCli
             params.width = WindowManager.LayoutParams.MATCH_PARENT;
             params.height = WindowManager.LayoutParams.WRAP_CONTENT;
             params.gravity = Gravity.BOTTOM;
-
             window.setAttributes(params);
         }
     }
@@ -79,7 +81,12 @@ public final class OkShareFragment extends DialogFragment implements OkOnItemCli
         rvOptionsList = view.findViewById(R.id.rv_share_options);
         GridLayoutManager glm = new GridLayoutManager(activity, 4);
         rvOptionsList.setLayoutManager(glm);
-        rvOptionsList.setHasFixedSize(true);
+        SlideInUpAnimator animator = new SlideInUpAnimator();
+        animator.setAddDuration(10000);
+        animator.setChangeDuration(5000);
+        animator.setMoveDuration(5000);
+        animator.setRemoveDuration(5000);
+        rvOptionsList.setItemAnimator(animator);
         rvOptionsList.setAdapter(new ShareOptionAdapter(options, this));
     }
 
@@ -136,15 +143,14 @@ public final class OkShareFragment extends DialogFragment implements OkOnItemCli
         dismissAllowingStateLoss();
     }
 
-
-    private static class ShareOptionAdapter extends RecyclerView.Adapter<ShareOptionAdapter.ShareOptionViewHolder> {
+    static class ShareOptionAdapter extends RecyclerView.Adapter<ShareOptionAdapter.ShareOptionViewHolder> {
 
         private List<OkShareOption> options;
         private OkOnItemClick<OkShareOption> onItemClick;
 
         ShareOptionAdapter(List<OkShareOption> options, OkOnItemClick<OkShareOption> onItemClick) {
-            this.options = options;
             this.onItemClick = onItemClick;
+            this.options = options;
         }
 
         @NonNull
@@ -166,7 +172,7 @@ public final class OkShareFragment extends DialogFragment implements OkOnItemCli
 
         @Override
         public int getItemCount() {
-            return options == null ? 0 : options.size();
+            return options.size();
         }
 
         private static class ShareOptionViewHolder extends RecyclerView.ViewHolder {

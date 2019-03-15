@@ -10,10 +10,38 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+
+    //签名配置
+    signingConfigs {
+        release {
+            storeFile file("/home/baiyu/Documents/liupengcheng/keystore/onekey/oke.jks")
+            storePassword "baiyuas123"
+            keyAlias "onekey"
+            keyPassword "baiyuas123"
+            v2SigningEnabled true
+        }
+        debug {
+            storeFile file("/home/baiyu/Documents/liupengcheng/keystore/onekey/oke.jks")
+            storePassword "baiyuas123"
+            keyAlias "onekey"
+            keyPassword "baiyuas123"
+            v2SigningEnabled false
+        }
+    }
+
     buildTypes {
         release {
+            debuggable false
+            signingConfig signingConfigs.release
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+            debuggable true
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     compileOptions {
@@ -31,4 +59,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     implementation project(':ok_share_component')
     implementation project(':ok_library_component')
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
 }

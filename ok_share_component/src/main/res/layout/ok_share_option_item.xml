@@ -8,10 +8,10 @@
 
     <ImageView
         android:id="@+id/iv_share_option_item_icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
         android:contentDescription="ShareOption"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         tools:background="#FFEECC"
         tools:ignore="HardcodedText" />
 
