@@ -19,6 +19,8 @@ import java.io.IOException;
 
 /**
  * @author lpc
+ *
+ * https://open.weixin.qq.com/cgi-bin/showdocument?action=dir_list&t=resource/res_list&verify=1&id=open1419317340&token=64624e11a59528bab5f25e68ab4eaef775180bfb&lang=zh_CN
  */
 public class WxShare extends BaseShare {
 

@@ -42,7 +42,15 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        // for QQ
         OneKeyShare.get().onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        // for 微博
+        OneKeyShare.get().onNewIntent(intent);
+        super.onNewIntent(intent);
     }
 }

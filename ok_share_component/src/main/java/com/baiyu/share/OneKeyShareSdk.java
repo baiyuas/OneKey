@@ -6,6 +6,7 @@ import android.content.Intent;
 import com.baiyu.share.alipay.AlipayShare;
 import com.baiyu.share.base.IShare;
 import com.baiyu.share.qq.QqShare;
+import com.baiyu.share.sina.SinaShare;
 import com.baiyu.share.wechat.WxShare;
 
 /**
@@ -41,6 +42,7 @@ class OneKeyShareSdk {
                 shareChannel = new QqShare(context, 1);
                 break;
             case OkShareOption.SHARE_TYPE_SINA:
+                shareChannel = new SinaShare(context);
                 break;
             case OkShareOption.SHARE_TYPE_WECHAT_MOMENTS:
                 shareChannel = new WxShare(context, 1);
