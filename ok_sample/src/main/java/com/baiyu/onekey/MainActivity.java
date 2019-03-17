@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         message.setTitle("分享标题");
         message.setAppNameQq("一键分享");
         message.setImageUrl("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1552208964109&di=4b8c15a7f50ebd55be64fb967ff3ba15&imgtype=0&src=http%3A%2F%2Fwww.dzwww.com%2Fnvxing%2Ftt%2F201304%2FW020130411383037863925.jpg");
-        message.setMediaType(OkShareMessage.SHARE_MIDIA_TYPE_IMAGE);
+        message.setMediaType(OkShareMessage.SHARE_MIDIA_TYPE_WEB);
         message.setSubTitle("分享内容");
         message.setUrl("http://www.baidu.com");
 
@@ -45,12 +45,5 @@ public class MainActivity extends AppCompatActivity {
         // for QQ
         OneKeyShare.get().onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
-    }
-
-    @Override
-    protected void onNewIntent(Intent intent) {
-        // for 微博
-        OneKeyShare.get().onNewIntent(intent);
-        super.onNewIntent(intent);
     }
 }

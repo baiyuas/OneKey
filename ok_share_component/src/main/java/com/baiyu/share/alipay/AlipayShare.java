@@ -25,7 +25,7 @@ import java.io.IOException;
  */
 public class AlipayShare extends BaseShare {
 
-    private static final String APP_ID = "2019030863512336";
+    private static final String APP_ID = "2019031763561290";
     private static final int MIN_SUPPORT_LIFE_VERSION = 84;
     private static final int MAX_SUPPORT_LIFE_VERSION = 101;
     private static final int MAX_THUMB = 32 * 1024;

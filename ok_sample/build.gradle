@@ -14,14 +14,14 @@ android {
     //签名配置
     signingConfigs {
         release {
-            storeFile file("/home/baiyu/Documents/liupengcheng/keystore/onekey/oke.jks")
+            storeFile file("/Users/leo/Desktop/oke.jks")
             storePassword "baiyuas123"
             keyAlias "onekey"
             keyPassword "baiyuas123"
             v2SigningEnabled true
         }
         debug {
-            storeFile file("/home/baiyu/Documents/liupengcheng/keystore/onekey/oke.jks")
+            storeFile file("/Users/leo/Desktop/oke.jks")
             storePassword "baiyuas123"
             keyAlias "onekey"
             keyPassword "baiyuas123"

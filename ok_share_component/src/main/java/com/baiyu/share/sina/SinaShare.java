@@ -65,7 +65,7 @@ public class SinaShare extends BaseShare {
 
     @Override
     public void share(OkShareMessage message) {
-        if (WbSdk.isWbInstall(context)) {
+        if (!WbSdk.isWbInstall(context)) {
             OKShareUtil.toast(context, "检测到您未安装新浪微博客户端");
             return;
         }
@@ -130,6 +130,14 @@ public class SinaShare extends BaseShare {
      */
     private void shareWebPageObj(OkShareMessage message, Bitmap bitmap) {
         WeiboMultiMessage multiMessage = new WeiboMultiMessage();
+        ImageObject imageObject = new ImageObject();
+        imageObject.setImageObject(bitmap);
+        multiMessage.imageObject = imageObject;
+
+        TextObject textObject = new TextObject();
+        textObject.text = message.getSubTitle();
+        multiMessage.textObject = textObject;
+
         WebpageObject mediaObject = new WebpageObject();
         mediaObject.identify = Utility.generateGUID();
         mediaObject.title = message.getTitle();
