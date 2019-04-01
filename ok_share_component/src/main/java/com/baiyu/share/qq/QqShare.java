@@ -29,7 +29,7 @@ import java.util.ArrayList;
  */
 public class QqShare extends BaseShare {
 
-    private final static String APP_ID = "100827287";
+    private final static String APP_ID = "1108301618";
 
     /**
      * 1 QQ, 2QQ-Zone
