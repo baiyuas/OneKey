@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Environment;
 
+import com.baiyu.share.BuildConfig;
 import com.baiyu.share.ImageAsyncTask;
 import com.baiyu.share.OKShareUtil;
 import com.baiyu.share.OkShareMessage;
@@ -34,7 +35,6 @@ import java.io.IOException;
 public class SinaShare extends BaseShare {
 
     private static final int MAX_THUMB = 32 * 1024;
-    private static final String APP_ID = "1616848249";
 //    private static final String APP_Secret = "76f3dd9a055ccbaa84cbadb16e4afa0f";
 
     private WbShareHandler shareHandler;
@@ -58,7 +58,7 @@ public class SinaShare extends BaseShare {
 
     public SinaShare(Context context) {
         super(context);
-        WbSdk.install(context, new AuthInfo(context, APP_ID, "https://api.weibo.com/oauth2/default.html", ""));
+        WbSdk.install(context, new AuthInfo(context, BuildConfig.Sina_ID, "https://api.weibo.com/oauth2/default.html", ""));
         shareHandler = new WbShareHandler((Activity) context);
         shareHandler.registerApp();
     }

@@ -8,6 +8,7 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.os.Environment;
 
+import com.baiyu.share.BuildConfig;
 import com.baiyu.share.ImageAsyncTask;
 import com.baiyu.share.OKShareUtil;
 import com.baiyu.share.OkShareMessage;
@@ -28,8 +29,6 @@ import java.util.ArrayList;
  * @author lpc
  */
 public class QqShare extends BaseShare {
-
-    private final static String APP_ID = "1108301618";
 
     /**
      * 1 QQ, 2QQ-Zone
@@ -57,7 +56,7 @@ public class QqShare extends BaseShare {
     public QqShare(Context context, int channel) {
         super(context);
         this.channel = channel;
-        tencent = Tencent.createInstance(APP_ID, context.getApplicationContext());
+        tencent = Tencent.createInstance(BuildConfig.QQ_ID, context.getApplicationContext());
     }
 
     @Override

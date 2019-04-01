@@ -9,7 +9,10 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0.0"
-
+        buildConfigField "String", "Wechat_ID", Wechat_APP_ID.toString()
+        buildConfigField "String", "QQ_ID", QQ_APP_ID.toString()
+        buildConfigField "String", "Sina_ID", Sina_APP_ID.toString()
+        buildConfigField "String", "Apliay_ID", Alipay_APP_ID.toString()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

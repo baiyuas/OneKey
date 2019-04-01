@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import com.baiyu.share.BuildConfig;
 import com.baiyu.share.ImageAsyncTask;
 import com.baiyu.share.OKShareUtil;
 import com.baiyu.share.OkShareMessage;
@@ -24,7 +25,6 @@ import java.io.IOException;
  */
 public class WxShare extends BaseShare {
 
-    private static final String APP_ID = "wx9839ffcda3f6013b";
     private static final int MAX_THUMB = 32 * 1024;
     private static final int THUMB_SIZE = 150;
 
@@ -38,9 +38,9 @@ public class WxShare extends BaseShare {
     public WxShare(Context context, int channel) {
         super(context);
         // 通过WXAPIFactory工厂，获取IWXAPI的实例
-        api = WXAPIFactory.createWXAPI(context.getApplicationContext(), APP_ID, true);
+        api = WXAPIFactory.createWXAPI(context.getApplicationContext(), BuildConfig.Wechat_ID, true);
         // 将应用的appId注册到微信
-        api.registerApp(APP_ID);
+        api.registerApp(BuildConfig.Wechat_ID);
         this.channel = channel;
     }
 

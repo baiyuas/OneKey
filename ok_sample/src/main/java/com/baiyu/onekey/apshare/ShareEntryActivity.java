@@ -11,6 +11,7 @@ import com.alipay.share.sdk.openapi.BaseReq;
 import com.alipay.share.sdk.openapi.BaseResp;
 import com.alipay.share.sdk.openapi.IAPAPIEventHandler;
 import com.alipay.share.sdk.openapi.IAPApi;
+import com.baiyu.share.BuildConfig;
 import com.baiyu.share.R;
 
 /**
@@ -18,14 +19,12 @@ import com.baiyu.share.R;
  */
 public class ShareEntryActivity extends Activity implements IAPAPIEventHandler {
 
-
-    private static final String APP_ID = "2019030863512336";
     private IAPApi api;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        api = APAPIFactory.createZFBApi(getApplicationContext(), APP_ID, true);
+        api = APAPIFactory.createZFBApi(getApplicationContext(), BuildConfig.Apliay_ID, true);
         try {
             Intent intent = getIntent();
             api.handleIntent(intent, this);

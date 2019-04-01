@@ -11,6 +11,7 @@ import com.alipay.share.sdk.openapi.APMediaMessage;
 import com.alipay.share.sdk.openapi.APWebPageObject;
 import com.alipay.share.sdk.openapi.IAPApi;
 import com.alipay.share.sdk.openapi.SendMessageToZFB;
+import com.baiyu.share.BuildConfig;
 import com.baiyu.share.ImageAsyncTask;
 import com.baiyu.share.OKShareUtil;
 import com.baiyu.share.OkShareMessage;
@@ -25,7 +26,6 @@ import java.io.IOException;
  */
 public class AlipayShare extends BaseShare {
 
-    private static final String APP_ID = "2019031763561290";
     private static final int MIN_SUPPORT_LIFE_VERSION = 84;
     private static final int MAX_SUPPORT_LIFE_VERSION = 101;
     private static final int MAX_THUMB = 32 * 1024;
@@ -39,7 +39,7 @@ public class AlipayShare extends BaseShare {
     public AlipayShare(Context context, int channel) {
         super(context);
         this.channel = channel;
-        api = APAPIFactory.createZFBApi(context.getApplicationContext(), APP_ID, true);
+        api = APAPIFactory.createZFBApi(context.getApplicationContext(), BuildConfig.Apliay_ID, true);
     }
 
     @Override

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.widget.Toast;
 
+import com.baiyu.share.BuildConfig;
 import com.baiyu.share.R;
 import com.tencent.mm.opensdk.modelbase.BaseReq;
 import com.tencent.mm.opensdk.modelbase.BaseResp;
@@ -20,13 +21,12 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
  */
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
-    private static final String APP_ID = "wx9839ffcda3f6013b";
     private IWXAPI api;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        api = WXAPIFactory.createWXAPI(getApplicationContext(), APP_ID, false);
+        api = WXAPIFactory.createWXAPI(getApplicationContext(), BuildConfig.Wechat_ID, false);
         try {
             Intent intent = getIntent();
             api.handleIntent(intent, this);
