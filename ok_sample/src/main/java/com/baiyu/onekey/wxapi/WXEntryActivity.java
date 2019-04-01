@@ -20,7 +20,7 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
  */
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
 
-    private static final String APP_ID = "wxcd7685a4558c2592";
+    private static final String APP_ID = "wx9839ffcda3f6013b";
     private IWXAPI api;
 
     @Override

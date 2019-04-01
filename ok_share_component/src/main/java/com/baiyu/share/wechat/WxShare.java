@@ -24,7 +24,7 @@ import java.io.IOException;
  */
 public class WxShare extends BaseShare {
 
-    private static final String APP_ID = "wxcd7685a4558c2592";
+    private static final String APP_ID = "wx9839ffcda3f6013b";
     private static final int MAX_THUMB = 32 * 1024;
     private static final int THUMB_SIZE = 150;
 
