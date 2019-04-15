@@ -2,12 +2,18 @@ package com.baiyu.onekey;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.Toast;
 
 import com.baiyu.share.OkShareMessage;
 import com.baiyu.share.OkShareOption;
 import com.baiyu.share.OneKeyShare;
+import com.fm.openinstall.OpenInstall;
+import com.fm.openinstall.listener.AppWakeUpAdapter;
+import com.fm.openinstall.model.AppData;
 
 /**
  * @author baiyu
@@ -39,6 +45,9 @@ public class MainActivity extends AppCompatActivity {
                     .addOption(new OkShareOption(R.drawable.ic_share_ding, "钉钉", 7, OkShareOption.SHARE_TYPE_QQ))
                     .show(this);
         });
+
+        //获取唤醒参数
+        OpenInstall.getWakeUp(getIntent(), wakeUpAdapter);
     }
 
     @Override
@@ -46,4 +55,31 @@ public class MainActivity extends AppCompatActivity {
         OneKeyShare.get().onActivityResult(requestCode, resultCode, data);
         super.onActivityResult(requestCode, resultCode, data);
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        // 此处要调用，否则App在后台运行时，会无法截获
+        OpenInstall.getWakeUp(intent, wakeUpAdapter);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        wakeUpAdapter = null;
+    }
+
+    AppWakeUpAdapter wakeUpAdapter = new AppWakeUpAdapter() {
+        @Override
+        public void onWakeUp(AppData appData) {
+            //获取渠道数据
+            String channelCode = appData.getChannel();
+            //获取绑定数据
+            String bindData = appData.getData();
+            new Handler().post(() -> {
+                Toast.makeText(MainActivity.this, bindData, Toast.LENGTH_SHORT).show();
+            });
+            Log.d("OpenInstall", "getWakeUp : wakeupData = " + appData.toString());
+        }
+    };
 }

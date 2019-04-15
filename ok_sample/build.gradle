@@ -14,14 +14,14 @@ android {
     //签名配置
     signingConfigs {
         release {
-            storeFile file("/Users/leo/Desktop/oke.jks")
+            storeFile file("/home/baiyu/Documents/liupengcheng/keystore/onekey/oke.jks")
             storePassword "baiyuas123"
             keyAlias "onekey"
             keyPassword "baiyuas123"
             v2SigningEnabled true
         }
         debug {
-            storeFile file("/Users/leo/Desktop/oke.jks")
+            storeFile file("/home/baiyu/Documents/liupengcheng/keystore/onekey/oke.jks")
             storePassword "baiyuas123"
             keyAlias "onekey"
             keyPassword "baiyuas123"
@@ -60,4 +60,5 @@ dependencies {
     implementation project(':ok_share_component')
     implementation project(':ok_library_component')
     implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation "com.android.support:multidex:1.0.3"
 }

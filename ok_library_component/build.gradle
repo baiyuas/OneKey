@@ -38,5 +38,6 @@ dependencies {
     api 'com.tencent.mm.opensdk:wechat-sdk-android-without-mta:5.3.1'
     api files('libs/share_alipay_sdk.jar')
     api files('libs/share_qq_sdk_1.0.0.436.jar')
+    api files('libs/openInstall_v2.2.2.jar')
     api 'com.sina.weibo.sdk:core:4.3.7:openDefaultRelease@aar'
 }
